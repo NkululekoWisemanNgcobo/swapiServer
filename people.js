@@ -13,7 +13,6 @@ class PeopleAPI extends RESTDataSource {
 
   async peoplePage({ page }) {
     const response = await this.get(`people/?page=${page}`);
-    console.log(response);
     response.results = this.peopleResolver(response.results);
     return response;
   }
